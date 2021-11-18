@@ -1,0 +1,3 @@
+﻿  Mini Physics Test.cpp
+D:\Programing\C++ codes\TEST\Mini Physics Test\Mini Physics Test\Mini Physics Test.cpp(174,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Mini Physics Test.vcxproj -> D:\Programing\C++ codes\TEST\Mini Physics Test\Debug\Mini Physics Test.exe
