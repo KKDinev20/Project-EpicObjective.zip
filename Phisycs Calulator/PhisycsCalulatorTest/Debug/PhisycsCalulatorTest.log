@@ -1,0 +1,5 @@
+﻿  PhisycsCalulatorTest.cpp
+D:\Programing\C++ codes\TEST\PhisycsCalulatorTest\PhisycsCalulatorTest\PhisycsCalulatorTest.cpp(207): warning C4717: 'Convertion': recursive on all control paths, function will cause runtime stack overflow
+D:\Programing\C++ codes\TEST\PhisycsCalulatorTest\PhisycsCalulatorTest\PhisycsCalulatorTest.cpp(124): warning C4717: 'Formulas': recursive on all control paths, function will cause runtime stack overflow
+D:\Programing\C++ codes\TEST\PhisycsCalulatorTest\PhisycsCalulatorTest\PhisycsCalulatorTest.cpp(31): warning C4717: 'StartOfProgram': recursive on all control paths, function will cause runtime stack overflow
+  PhisycsCalulatorTest.vcxproj -> D:\Programing\C++ codes\TEST\PhisycsCalulatorTest\Debug\PhisycsCalulatorTest.exe
