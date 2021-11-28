@@ -34,7 +34,7 @@ void StartOfProgram()
 void Formulas()
 {
 	system("CLS");
-	cout << "Choose a formaulas between:\n";
+	cout << "Choose a formulas between:\n";
 	cout << "1. Calculate Speed\n";
 	cout << "2. Calculate Pressure\n";
 	cout << "3. Calculate Density\n";
@@ -52,7 +52,7 @@ void Formulas()
 	case 1:
 		system("CLS");
 
-		cout << "Enter the lengh of the road: ";
+		cout << "Enter the length of the road: ";
 		cin >> RoadLength;
 		'\n';
 		cout << "Enter the travel time: ";
@@ -91,7 +91,7 @@ void Formulas()
 	case 4:
 		system("CLS");
 
-		cout << "Enter the Mass of the body: ";
+		cout << "Enter the mass of the body: ";
 		cin >> Mass;
 		cout << '\n';
 		cout << "Enter the velocity with which the body is traveling: ";
@@ -104,10 +104,10 @@ void Formulas()
 	case 5:
 		system("CLS");
 
-		cout << "Enter the Mass of the body: ";
+		cout << "Enter the mass of the body: ";
 		cin >> Mass;
 		cout << '\n';
-		cout << "Enter the Acceleration in velocity available: ";
+		cout << "Enter the acceleration in velocity available: ";
 		cin >> Acceleration;
 		cout << '\n';
 		cout << Mass / Acceleration;
