@@ -1,0 +1,4 @@
+﻿  MapTest.cpp
+D:\Programing\C++ codes\TEST\MapTest\MapTest\MapTest.cpp(31,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+D:\Programing\C++ codes\TEST\MapTest\MapTest\MapTest.cpp(179,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  MapTest.vcxproj -> D:\Programing\C++ codes\TEST\MapTest\Debug\MapTest.exe
