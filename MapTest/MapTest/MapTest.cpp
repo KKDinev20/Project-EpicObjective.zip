@@ -10,13 +10,11 @@ using namespace std;
 using namespace std::this_thread; //allows the usage of "sleep_for" function
 using namespace std::chrono_literals; //allows the use of ns, us, ms, s, h, etc.
 void PlanetSort();
-
 enum PlayerDirection { Still = 0, Left, Right, Up, Down };//user defined data type where we specify a set of values for a variable and the variable can only take one out of a small set of possible values
 struct Player
 {
 	int X;
 	int Y;
-	
 	PlayerDirection direction;
 };
 
@@ -168,6 +166,14 @@ void Missions()
 	{
 	case 1:
 		PlanetSort();
+	case 2:
+		PlanetSort();
+	case 3:
+		PlanetSort();
+	case 4:
+		PlanetSort();
+	case 5:
+		PlanetSort();
 	}
 }
 
@@ -188,6 +194,82 @@ void PlanetSort()
 	system("CLS");
 	cout << "Help the little boy sort the planets \n";
 	string Planets[8] = { "Saturn", "Venus", "Neptune", "Jupeter", "Mars", "Uranus", "Mercury", "Earth"};
+
+	for (int i = 0; i < 8; i++)
+	{
+		cout << i+1 << ". " << Planets[i] << endl;
+	}
+	system("pause");
+	for (int tries = 0; tries < 8; tries++)
+	{
+		system("CLS");
+		cout << "1." << Planets[0] << endl;
+		cout << "2." << Planets[1] << endl;
+		cout << "3." << Planets[2] << endl;
+		cout << "4." << Planets[3] << endl;
+		cout << "5." << Planets[4] << endl;
+		cout << "6." << Planets[5] << endl;
+		cout << "7." << Planets[6] << endl;
+		cout << "8." << Planets[7] << endl;
+
+		cout << "Which planets goes to " << tries + 1 << " place? \n";
+		int Place;
+		cin >> Place;
+
+		swap(Planets[tries], Planets[Place-1]);
+	}
+	system("CLS");
+	cout << "Let's se if the planets are on their place";
+	for (int i = 0; i < 8; i++)
+	{
+		cout << i+1 << ". " << Planets[i];
+	}
+	int tempPoints = 0;
+	if (Planets[0] == "Mercury")
+	{
+		tempPoints++;
+	}
+	if (Planets[1] == "Venus")
+	{
+		tempPoints++;
+	}
+	if (Planets[2] == "Earth")
+	{
+		tempPoints++;
+	}
+	if (Planets[3] == "Mars")
+	{
+		tempPoints++;
+	}
+	if (Planets[4] == "Jupiter")
+	{
+		tempPoints++;
+	}
+	if (Planets[5] == "Saturn")
+	{
+		tempPoints++;
+	}
+	if (Planets[6] == "Uranus")
+	{
+		tempPoints++;
+	}
+	if (Planets[7] == "Neptune")
+	{
+		tempPoints++;
+	}
+
+	if (tempPoints >= 6)
+	{
+		score++;
+		cout << "Yay you helped sort the planets";
+	}
+	else
+	{
+		cout << "Oh no you couldn't help";
+	}
+
+	cout << "\nWhen you are ready press \"Enter\"";
+	system("Pause");
 }
 
 int main()
