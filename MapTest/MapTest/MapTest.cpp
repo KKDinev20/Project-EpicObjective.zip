@@ -11,13 +11,22 @@ using namespace std::this_thread; //allows the usage of "sleep_for" function
 using namespace std::chrono_literals; //allows the use of ns, us, ms, s, h, etc.
 void PlanetSort();
 void WhatFloats();
+void CalculateSpeed();
+void Breakfast();
 enum PlayerDirection { Still = 0, Left, Right, Up, Down };//user defined data type where we specify a set of values for a variable and the variable can only take one out of a small set of possible values
 struct Player
 {
 	int X;
 	int Y;
 	int Power;
+	int Health;
 	PlayerDirection direction;
+};
+
+struct Boss
+{
+	int Power;
+	int Health;
 };
 
 struct Help
@@ -34,10 +43,10 @@ struct Game
 	bool GameOn = true;
 };
 
-
 Player player;
 Help help;
 Game game;
+Boss boss;
 
 void Setup()
 {
@@ -46,6 +55,9 @@ void Setup()
 	player.X = game.gameWidth / 2;
 	player.Y = game.gameHeight / 2;
 	player.Power = 0;
+	player.Health = 100;
+	boss.Power = 10;
+	boss.Health = 100;
 	help.HelpX = rand() % game.gameWidth;
 	help.HelpY = rand() % game.gameHeight;
 }
@@ -173,6 +185,10 @@ void Missions()
 	case 2:
 		WhatFloats();
 		break;
+	case 3:
+		CalculateSpeed();
+	case 4:
+		Breakfast();
 	}
 }
 
@@ -278,6 +294,91 @@ void PlanetSort()
 	system("Pause");
 }
 
+void CalculateSpeed()
+{
+	system("CLS");
+
+	cout << "Oh no that poor woman is going to be late for work \n";
+	cout << "Lets use our super speed to help, but you will have to calculate it before we use it \n";
+	int Time = 20; //20 minutes = 0.3hours
+	int Distance = 30; //30km
+	int Speed;
+	cout << "She has " << Time << " minutes to go to work " << endl;
+	cout << "And the distance we need to travel is" << Distance << endl;
+	cout << "So, what should our speed be? \n";
+	cin >> Speed;
+
+	for (int i = 0; i < 30; i++)
+	{
+		for (int i = 0; i < 30; i++)
+		{
+			cout << "flying to woman's office" << endl;
+			for (int j = 0; j < i; j++)
+			{
+				cout << " ";
+			}
+			cout << "o";
+			//cout << character; 
+			system("CLS");
+		}
+	}
+
+	if (Speed >= 100)
+	{
+		cout << "Yay, she is there on time!\n";
+	}
+	else
+	{
+		cout << "Ohh no!, she is late for work!\n";
+	}
+}
+
+void Breakfast()
+{
+	system("CLS");
+	cout << "There is one of your biggest fans. AND HE OFFERS U FOOD\n";
+	cout << "Would you accept it?\n";
+
+	string answer;
+	while (answer != "YES" && answer != "NO")
+	{
+		cin >> answer;
+		if (answer == "YES")
+		{
+			cout << "Yay! We you made him happy!\n";
+		}
+		else if(answer == "NO")
+		{
+			cout << "AW, u made him sad.\n";
+		}
+		else
+		{
+		cout << "Please enter with capital letters\n";
+		}
+	}
+
+	cout << "OHH NO!! Look ut, there is a big monster over there?\n";
+	cout << "Would you save the city?\n";
+
+	cin >> answer;
+	while (answer != "YES" && answer != "NO")
+	{
+		cin >> answer;
+		if (answer == "YES")
+		{
+			cout << "SAVED\n";
+		}
+		else if(answer == "NO")
+		{
+			cout << "NOT SAVED\n";
+		}
+		else
+		{
+			cout << "Please enter with capital letters\n";
+		}
+	}
+}
+
 void WhatFloats()
 {
 	system("CLS");
@@ -309,7 +410,7 @@ int main()
 {
 	Setup();
 
-	while (!game.GameOn)
+	while (game.GameOn)
 	{
 		Border();//draws border
 		PlayerInput();//checks for player input
