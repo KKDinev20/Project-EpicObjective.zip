@@ -10,11 +10,13 @@ using namespace std;
 using namespace std::this_thread; //allows the usage of "sleep_for" function
 using namespace std::chrono_literals; //allows the use of ns, us, ms, s, h, etc.
 void PlanetSort();
+void WhatFloats();
 enum PlayerDirection { Still = 0, Left, Right, Up, Down };//user defined data type where we specify a set of values for a variable and the variable can only take one out of a small set of possible values
 struct Player
 {
 	int X;
 	int Y;
+	int Power;
 	PlayerDirection direction;
 };
 
@@ -24,41 +26,43 @@ struct Help
 	int HelpY;
 };
 
-struct Map
+struct Game
 {
-	const int MapWidth = 20;
-	const int MapHeight = 20;
+	int score = 0;
+	const int gameWidth = 20;
+	const int gameHeight = 20;
+	bool GameOn = true;
 };
 
-int score = 0;
+
 Player player;
 Help help;
-Map map;
-bool GameOn = false;
+Game game;
 
 void Setup()
 {
 	srand(time(NULL));
 	player.direction = Still;
-	player.X = map.MapWidth / 2;
-	player.Y = map.MapHeight / 2;
-	help.HelpX = rand() % map.MapWidth;
-	help.HelpY = rand() % map.MapHeight;
+	player.X = game.gameWidth / 2;
+	player.Y = game.gameHeight / 2;
+	player.Power = 0;
+	help.HelpX = rand() % game.gameWidth;
+	help.HelpY = rand() % game.gameHeight;
 }
 
 void Border()
 {
 	system("CLS");
-	for (int i = 0; i < map.MapWidth + 2; i++)
+	for (int i = 0; i < game.gameWidth + 2; i++)
 	{
 		cout << "#";
 	}
 
 	cout << endl;
 
-	for (int i = 0; i < map.MapHeight; i++)
+	for (int i = 0; i < game.gameHeight; i++)
 	{
-		for (int j = 0; j < map.MapWidth; j++)
+		for (int j = 0; j < game.gameWidth; j++)
 		{
 			if (j == 0)
 			{
@@ -76,7 +80,7 @@ void Border()
 			{
 				cout << " ";
 			}
-			if (j == map.MapWidth - 1)
+			if (j == game.gameWidth - 1)
 			{
 				cout << "#";
 			}
@@ -84,13 +88,12 @@ void Border()
 		cout << endl;
 	}
 
-
-	for (int i = 0; i < map.MapWidth + 2; i++)
+	for (int i = 0; i < game.gameWidth + 2; i++)
 	{
 		cout << "#";
 	}
 
-	cout << "\n People helped: " << score;
+	cout << "\n People helped: " << game.score;
 }
 
 void PlayerInput()
@@ -135,7 +138,7 @@ void MovementNLogic()
 		break;
 	}
 
-	if (player.X >= map.MapWidth)
+	if (player.X >= game.gameWidth)
 	{
 		player.direction = Still;
 		player.X -= 1;
@@ -150,7 +153,7 @@ void MovementNLogic()
 		player.direction = Still;
 		player.Y += 1;
 	}
-	else if (player.Y >= map.MapHeight)
+	else if (player.Y >= game.gameHeight)
 	{
 		player.direction = Still;
 		player.Y -= 1;
@@ -166,14 +169,10 @@ void Missions()
 	{
 	case 1:
 		PlanetSort();
+		break;
 	case 2:
-		PlanetSort();
-	case 3:
-		PlanetSort();
-	case 4:
-		PlanetSort();
-	case 5:
-		PlanetSort();
+		WhatFloats();
+		break;
 	}
 }
 
@@ -181,8 +180,8 @@ void MissionsActivate()
 {
 	if (player.X == help.HelpX && player.Y == help.HelpY)
 	{
-		help.HelpX = rand() % map.MapWidth;
-		help.HelpY = rand() % map.MapHeight;
+		help.HelpX = rand() % game.gameWidth;
+		help.HelpY = rand() % game.gameHeight;
 
 		Missions();
 		player.direction = Still;
@@ -193,11 +192,11 @@ void PlanetSort()
 {
 	system("CLS");
 	cout << "Help the little boy sort the planets \n";
-	string Planets[8] = { "Saturn", "Venus", "Neptune", "Jupeter", "Mars", "Uranus", "Mercury", "Earth"};
+	string Planets[8] = { "Saturn", "Venus", "Neptune", "Jupeter", "Mars", "Uranus", "Mercury", "Earth" };
 
 	for (int i = 0; i < 8; i++)
 	{
-		cout << i+1 << ". " << Planets[i] << endl;
+		cout << i + 1 << ". " << Planets[i] << endl;
 	}
 	system("pause");
 	for (int tries = 0; tries < 8; tries++)
@@ -216,13 +215,20 @@ void PlanetSort()
 		int Place;
 		cin >> Place;
 
-		swap(Planets[tries], Planets[Place-1]);
+		if (Place <= 8)
+		{
+			swap(Planets[tries], Planets[Place - 1]);
+		}
+		else
+		{
+			cout << "pleace enter a valid planet";
+		}
 	}
 	system("CLS");
-	cout << "Let's se if the planets are on their place";
+	cout << "Let's se if the planets are on their place \n";
 	for (int i = 0; i < 8; i++)
 	{
-		cout << i+1 << ". " << Planets[i];
+		cout << i + 1 << ". " << Planets[i] << endl;
 	}
 	int tempPoints = 0;
 	if (Planets[0] == "Mercury")
@@ -260,7 +266,7 @@ void PlanetSort()
 
 	if (tempPoints >= 6)
 	{
-		score++;
+		game.score++;
 		cout << "Yay you helped sort the planets";
 	}
 	else
@@ -272,12 +278,38 @@ void PlanetSort()
 	system("Pause");
 }
 
+void WhatFloats()
+{
+	system("CLS");
+	int Answer;
+	cout << "The old fisherman's boat is broken. He has a hole in his boat \n";
+	cout << "There are three different materials \n";
+	cout << "1. Wood\n2. Metal\n3. Aluminum\n";
+	cout << "So what material should we use 1, 2 or 3\n";
+	cin >> Answer;
+
+	if (Answer == 3)
+	{
+		cout << "\nYay the boat is ready to go\n";
+	}
+	else if (Answer == 2 || Answer == 1)
+	{
+		cout << "\nOh no the boat sank\n";
+	}
+	else
+	{
+		cout << "\nPlease enter a valid number\n";
+	}
+
+	cout << "\nWhen you are ready press \"Enter\"";
+	system("Pause");
+}
+
 int main()
 {
-	srand(time(NULL));
 	Setup();
 
-	while (!GameOn)
+	while (!game.GameOn)
 	{
 		Border();//draws border
 		PlayerInput();//checks for player input
