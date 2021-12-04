@@ -446,7 +446,7 @@ void Question6()
 		EndOfProgram();
 	}
 	cout << "The primary reason a bird can perch harmlessly on bare high voltage wires is that \n";
-	cout << "A) a bird's feet are close together. \nB) a bird has a very large electrical resistance. \nC) a bird's feet are close together. \nD) all of the above \n";
+	cout << "A) a bird's feet are close together. \nB) a bird has a very large electrical resistance. \nC) there is no potential difference across the bird's feet. \nD) all of the above \n";
 	char answer = 'C';
 	char InputAnswer;
 	cin >> InputAnswer;
