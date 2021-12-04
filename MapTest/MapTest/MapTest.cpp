@@ -599,7 +599,7 @@ int main()
 	}
 	else if (player.Health)
 	{
-		cout << "    .-""""""-.\n";
+		cout << "    .-\"\"\"\"\"\"-.\n";
 		cout << "   .'          '.\n";
 		cout << " /   O      O   \\\n";
 		cout << " :           `    :\n";
