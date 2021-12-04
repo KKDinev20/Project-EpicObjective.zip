@@ -54,13 +54,18 @@ Help help;
 Game game;
 Boss boss;
 
+bool PlanetSortRepeat = false;
+bool WhatFloatsRepeat = false;
+bool CalculateSpeedRepeat = false;
+bool BreakfastRepeat = false;
+
 void Setup()
 {
 	srand(time(NULL));
 	player.direction = Still;
 	player.X = game.gameWidth / 2;
 	player.Y = game.gameHeight / 2;
-	player.Power = 1;
+	player.Power = 5;
 	player.Health = 100;
 	boss.Power = 10;
 	boss.Health = 100;
@@ -84,7 +89,7 @@ void Border()
 		cout << "#";
 	}
 
-	cout << setfill(' ') << setw(50) << " ";
+	cout << setfill(' ') << setw(60) << " ";
 	cout << endl;
 
 	for (int i = 0; i < game.gameHeight; i++)
@@ -112,7 +117,7 @@ void Border()
 				cout << "#";
 			}
 		}
-		cout << setfill(' ') << setw(50) << " ";
+		cout << setfill(' ') << setw(60) << " ";
 		cout << endl;
 	}
 
@@ -191,28 +196,53 @@ void MovementNLogic()
 void Missions()
 {
 	system("CLS");
-	int Mission = rand() % 5 + 1;
+	int Mission = rand() % 4 + 1;
 
 	switch (Mission)
 	{
 	case 1:
-		//PlanetSort();
-		CalculateSpeed();
+		if (PlanetSortRepeat == false)
+		{
+			PlanetSort();
+			break;
+		}
+		else
+		{
+			Missions();
+			PlanetSortRepeat = false;
+		}
 		break;
 	case 2:
-		//WhatFloats();
-		CalculateSpeed();
+		if (WhatFloatsRepeat == false)
+		{
+			WhatFloats();
+		}
+		else
+		{
+			Missions();
+			WhatFloatsRepeat = false;
+		}
 		break;
 	case 3:
-		CalculateSpeed();
-		//BossBattle();
+		if (CalculateSpeedRepeat == false)
+		{
+			CalculateSpeed();
+		}
+		else
+		{
+			Missions();
+			CalculateSpeedRepeat = false;
+		}
 		break;
 	case 4:
-		CalculateSpeed();
-		//BossBattle();
-		break;
-	case 5:
-		CalculateSpeed();
+		if (BreakfastRepeat == false)
+		{
+			Breakfast();
+		}
+		else
+		{
+			BreakfastRepeat = false;
+		}
 		break;
 	}
 }
@@ -315,6 +345,7 @@ void PlanetSort()
 		cout << "Oh no you couldn't help";
 	}
 
+	PlanetSortRepeat = true;
 	cout << "\nWhen you are ready press \"Enter\"";
 	system("Pause");
 }
@@ -330,7 +361,7 @@ void CalculateSpeed()
 	int Distance = 30; //30km
 	int Speed;
 	cout << "She has " << Time << " minutes to go to work " << endl;
-	cout << "And the distance we need to travel is" << Distance << endl;
+	cout << "And the distance we need to travel is " << Distance << endl;
 	cout << "So, what should our speed be? \n";
 	cin >> Speed;
 	system("CLS");
@@ -341,7 +372,7 @@ void CalculateSpeed()
 		{
 			cout << " ";
 		}
-		cout << "J";
+		cout << "o";
 		//cout << character; 
 		setPosition(0, 0);
 		sleep_for(50ms);
@@ -359,6 +390,7 @@ void CalculateSpeed()
 		cout << "Ohh no!, she is late for work!\n";
 		system("pause");
 	}
+	CalculateSpeedRepeat = true;
 }
 
 void Breakfast()
@@ -384,25 +416,29 @@ void Breakfast()
 			cout << "Please enter with capital letters\n";
 		}
 	}
+	BreakfastRepeat = true;
 
-	cout << "OHH NO!! Look ut, there is a big monster over there?\n";
-	cout << "Would you save the city?\n";
-
-	cin >> answer;
-	while (answer != "YES" && answer != "NO")
+	if (game.score >= 3)
 	{
-		cin >> answer;
-		if (answer == "YES")
+		cout << "OHH NO!! Look ut, there is a big monster over there?\n";
+		cout << "Will u go and fight the boss?\n";
+
+		string answer;
+		while (answer != "YES" && answer != "NO")
 		{
-			cout << "SAVED\n";
-		}
-		elif(answer == "NO")
-		{
-			cout << "NOT SAVED\n";
-		}
-		else
-		{
-			cout << "Please enter with capital letters\n";
+			cin >> answer;
+			if (answer == "YES")
+			{
+				BossBattle();
+			}
+			elif(answer == "NO")
+			{
+				cout << "NOT SAVED\n";
+			}
+			else
+			{
+				cout << "Please enter with capital letters\n";
+			}
 		}
 	}
 }
@@ -410,19 +446,19 @@ void Breakfast()
 void WhatFloats()
 {
 	system("CLS");
-	int Answer;
+	int Choice;
 	cout << "The old fisherman's boat is broken. He has a hole in his boat \n";
 	cout << "There are three different materials \n";
 	cout << "1. Wood\n2. Metal\n3. Aluminum\n";
 	cout << "So what material should we use 1, 2 or 3\n";
-	cin >> Answer;
+	cin >> Choice;
 
-	if (Answer == 3)
+	if (Choice == 3)
 	{
 		game.score++;
 		cout << "\nYay the boat is ready to go\n";
 	}
-	elif(Answer == 2 || Answer == 1)
+	elif(Choice == 2 || Choice == 1)
 	{
 		cout << "\nOh no the boat sank\n";
 	}
@@ -430,15 +466,19 @@ void WhatFloats()
 	{
 		cout << "\nPlease enter a valid number\n";
 	}
-
+	WhatFloatsRepeat = true;
 	cout << "\nWhen you are ready press \"Enter\"";
 	system("Pause");
 }
 
 void BossBattle()
 {
+	system("CLS");
 	player.Power *= game.score;
+
 	int turn = 1;
+	int PlayerSuperMoveCharge = 0;
+	int BossSuperMoveCharge = 0;
 
 	while (player.Health > 0 && boss.Health > 0)
 	{
@@ -447,12 +487,10 @@ void BossBattle()
 		cout << "Boss health: " << boss.Health << endl;
 		cout << "Player health: " << player.Health << endl;
 
-		int SuperMoveCharge = 0;
-
 		if (turn % 2 != 0)
 		{
 			cout << "Your turn\n";
-			cout << "1.Attack\n2.Shield\n3.Super Physics Power\n";
+			cout << "1.Attack\n2.Heal\n3.Super Physics Power\n";
 
 			int PlayerChoice;
 			cin >> PlayerChoice;
@@ -462,32 +500,41 @@ void BossBattle()
 				if (PlayerChoice == 1)
 				{
 					boss.Health -= player.Power;
-					SuperMoveCharge++;
+					PlayerSuperMoveCharge++;
 					break;
 				}
 				elif(PlayerChoice == 2)
 				{
 					player.Health += 10;
-					SuperMoveCharge++;
+					PlayerSuperMoveCharge++;
 					break;
 				}
 				elif(PlayerChoice == 3)
 				{
-					if (SuperMoveCharge >= 3)
+					if (PlayerSuperMoveCharge >= 3)
 					{
-						boss.Health -= 2 * player.Power;
+						boss.Health -= (2 * player.Power);
+						PlayerSuperMoveCharge = 0;
 						break;
+					}
+					else
+					{
+						cout << "Super move not ready\n";
+						sleep_for(1s);
+						cin >> PlayerChoice;
 					}
 				}
 				else
 				{
 					cout << "Enter a valid action\n";
+					cin >> PlayerChoice;
 				}
 			}
 		}
 		else
 		{
-			cout << "Boss's turn\n";
+			cout << "Boss's turn...\n";
+			sleep_for(2s);
 
 			int BossChoice;
 			BossChoice = rand() % 3 + 1;
@@ -497,18 +544,26 @@ void BossBattle()
 				if (BossChoice == 1)
 				{
 					player.Health -= boss.Power;
-					SuperMoveCharge++;
+					BossSuperMoveCharge++;
+					break;
 				}
 				elif(BossChoice == 2)
 				{
-					boss.Health += 10;
-					SuperMoveCharge++;
+					boss.Health += 15;
+					BossSuperMoveCharge++;
+					break;
 				}
 				elif(BossChoice == 3)
 				{
-					if (SuperMoveCharge >= 3)
+					if (BossSuperMoveCharge >= 3)
 					{
-						player.Health -= 2 * boss.Power;
+						player.Health -= (2 * boss.Power);
+						BossSuperMoveCharge = 0;
+						break;
+					}
+					else
+					{
+						BossChoice = rand() % 3 + 1;
 					}
 				}
 			}
@@ -517,7 +572,7 @@ void BossBattle()
 		turn++;
 	}
 
-	system("pause");
+	game.GameOn = false;
 }
 
 int main()
@@ -531,6 +586,29 @@ int main()
 		MovementNLogic();//Moves the player and stops you at the border
 		MissionsActivate();//activates missions
 		sleep_for(7ms);//sleep
+	}
+
+	system("CLS");
+	if (boss.Health <= 0)
+	{
+		cout << "            |   _   _\n";
+		cout << "      . | . x .|.|-|.|\n";
+		cout << "   |\\ ./.\\-/.\\-|.|.|.|\n";
+		cout << "~~~|.|_|.|_|.|.|.|_|.|~~~\n";
+		cout << "YAY we saved the city";
+	}
+	else if (player.Health)
+	{
+		cout << "    .-""""""-.\n";
+		cout << "   .'          '.\n";
+		cout << " /   O      O   \\\n";
+		cout << " :           `    :\n";
+		cout << " |                |\n";
+		cout << " :    .------.    :\n";
+		cout << "  \\  '        '  /\n";
+		cout << "   '.          .'\n";
+		cout << "     '-......-'\n";
+		cout << "Oh no the whole city is destroyed";
 	}
 
 	return 0;
