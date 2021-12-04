@@ -1,3 +1,5 @@
 ﻿  MapTest.cpp
-D:\Programing\C++ codes\TEST\MapTest\MapTest\MapTest.cpp(53,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+D:\Programing\C++ codes\TEST\MapTest\MapTest\MapTest.cpp(59,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+D:\Programing\C++ codes\TEST\MapTest\MapTest\MapTest.cpp(74,21): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
+D:\Programing\C++ codes\TEST\MapTest\MapTest\MapTest.cpp(74,24): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
   MapTest.vcxproj -> D:\Programing\C++ codes\TEST\MapTest\Debug\MapTest.exe
