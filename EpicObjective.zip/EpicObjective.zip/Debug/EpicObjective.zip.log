@@ -1,0 +1,6 @@
+﻿  EpicObjective.zip.cpp
+D:\Programing\C++ codes\TEST\EpicObjective.zip\EpicObjective.zip\EpicObjective.zip.cpp(310,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+D:\Programing\C++ codes\TEST\EpicObjective.zip\EpicObjective.zip\EpicObjective.zip.cpp(325,21): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
+D:\Programing\C++ codes\TEST\EpicObjective.zip\EpicObjective.zip\EpicObjective.zip.cpp(325,24): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
+D:\Programing\C++ codes\TEST\EpicObjective.zip\EpicObjective.zip\EpicObjective.zip.cpp(1228,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  EpicObjective.zip.vcxproj -> D:\Programing\C++ codes\TEST\EpicObjective.zip\Debug\EpicObjective.zip.exe
