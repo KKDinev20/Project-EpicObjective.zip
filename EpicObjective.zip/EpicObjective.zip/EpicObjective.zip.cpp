@@ -185,9 +185,9 @@ void StartOfAdvebture()
 {
 	system("CLS");
 	cout << "Hi there buddy!\n";
-	cout << "There are 3 thingw you might need to know before starting the advebture:\n\n";
-	cout << "1. Your answers will have impact on the story\n";
-	cout << "2.The maximim character u can use for the character is 1 \n";
+	cout << "There are 3 things you might need to know before starting the adventure:\n\n";
+	cout << "1. Your answers will have an impact on the story\n";
+	cout << "2.The maximum character you can use for the character is 1 \n";
 	cout << "3. You will have fun while playing :D\n";
 	cout << endl;
 	cout << endl;
@@ -199,7 +199,7 @@ void StartOfAdvebture()
 	cout << "5. Use \"D\" to move rightwards\n";
 	cout << endl;
 	cout << endl;
-	cout << "When you are ready to start press \"Entet\" \n";
+	cout << "When you are ready to start press \"Enter\" \n";
 	system("pause");
 
 	MakeCharacter();
@@ -214,7 +214,7 @@ void MakeCharacter()
 	cout << "Enter a nickname for it:\n";
 	cin >> nickname;
 
-	cout << "Are you sure u want to keep " << character << " as your character and " << nickname << " as it`s nickname till the end of the story?\n";
+	cout << "Are you sure that you want to keep " << character << " as your character and " << nickname << " as it`s nickname until the end of the story?\n";
 	cout << "(YES OR NO)\n";
 	string ConfirmName;
 	cin >> ConfirmName;
@@ -510,7 +510,7 @@ void MissionsActivate()
 void PlanetSort()
 {
 	system("CLS");
-	cout << "Help the little boy sort the planets \n";
+	cout << "Help the little boy to sort the planets \n";
 	string Planets[100] = { "Saturn", "Venus", "Neptune", "Jupeter", "Mars", "Uranus", "Mercury", "Earth" };
 
 	for (int i = 0; i < 8; i++)
@@ -543,7 +543,7 @@ void PlanetSort()
 			}
 			else
 			{
-				cout << "pleace enter a valid planet\n";
+				cout << "Please enter a valid planet\n";
 				cin >> Place;
 				CheckCinInt(Place);
 			}
@@ -551,7 +551,7 @@ void PlanetSort()
 
 	}
 	system("CLS");
-	cout << "Let's se if the planets are on their place \n";
+	cout << "Let's see if the planets are on their place \n";
 	for (int i = 0; i < 8; i++)
 	{
 		cout << i + 1 << ". " << Planets[i] << endl;
@@ -593,7 +593,7 @@ void PlanetSort()
 	if (tempPoints >= 6)
 	{
 		game.score++;
-		cout << "Yay you helped sort the planets! Good jod " << nickname << "!";
+		cout << "Yay you helped to sort the planets! Good job " << nickname << "!";
 	}
 	else
 	{
@@ -611,7 +611,7 @@ void CalculateSpeed()
 	setPosition(0, 0);
 
 	cout << "Oh no that poor woman is going to be late for work \n";
-	cout << "Lets use our super speed to help, but you will have to calculate it before we use it \n";
+	cout << "Let's use our super speed to help, but you will have to calculate it before we use it \n";
 	int Time = 20; //20 minutes = 0.3hours
 	int Distance = 30; //30km
 	int Speed;
@@ -679,8 +679,8 @@ void Breakfast()
 
 	if (game.score >= 3)
 	{
-		cout << "OHH NO!! Look ut, there is a big monster over there?\n";
-		cout << "Will u go and fight the boss?\n";
+		cout << "OHH NO!! Look out, there is a big monster over there?\n";
+		cout << "Will you go and fight the boss?\n";
 
 		string answer;
 		while (answer != "YES" && answer != "NO")
@@ -950,7 +950,7 @@ void Convertion()
 			Convertion();
 			break;
 		case 4:
-			cout << "Enter number to convert: ";
+			cout << "Enter a number to convert: ";
 			cin >> VarToBeConverted;
 			CheckCinDouble(VarToBeConverted);
 			cout << VarToBeConverted * 60 << " hours";
@@ -959,7 +959,7 @@ void Convertion()
 			Convertion();
 			break;
 		case 5:
-			cout << "Enter number to convert: ";
+			cout << "Enter a number to convert: ";
 			cin >> VarToBeConverted;
 			CheckCinDouble(VarToBeConverted);
 			cout << VarToBeConverted * 60 << " seconds";
@@ -968,7 +968,7 @@ void Convertion()
 			Convertion();
 			break;
 		case 6:
-			cout << "Enter number to convert: ";
+			cout << "Enter a number to convert: ";
 			cin >> VarToBeConverted;
 			CheckCinDouble(VarToBeConverted);
 			cout << VarToBeConverted / 60 << " min";
@@ -977,7 +977,7 @@ void Convertion()
 			Convertion();
 			break;
 		case 7:
-			cout << "Enter number to convert: ";
+			cout << "Enter a number to convert: ";
 			cin >> VarToBeConverted;
 			CheckCinDouble(VarToBeConverted);
 			cout << VarToBeConverted * 60 << "hours";
@@ -986,7 +986,7 @@ void Convertion()
 			Convertion();
 			break;
 		case 8:
-			cout << "Enter number to convert: ";
+			cout << "Enter a number to convert: ";
 			cin >> VarToBeConverted;
 			CheckCinDouble(VarToBeConverted);
 			cout << VarToBeConverted / 1000 << " kilograms";
@@ -995,7 +995,7 @@ void Convertion()
 			Convertion();
 			break;
 		case 9:
-			cout << "Enter number to convert: ";
+			cout << "Enter a number to convert: ";
 			cin >> VarToBeConverted;
 			CheckCinDouble(VarToBeConverted);
 			cout << VarToBeConverted * 1000 << " milligrams";
@@ -1004,7 +1004,7 @@ void Convertion()
 			Convertion();
 			break;
 		case 10:
-			cout << "Enter number to convert: ";
+			cout << "Enter a number to convert: ";
 			cin >> VarToBeConverted;
 			CheckCinDouble(VarToBeConverted);
 			cout << VarToBeConverted / 1000 << " grams";
@@ -1013,7 +1013,7 @@ void Convertion()
 			Convertion();
 			break;
 		case 11:
-			cout << "Enter number to convert: ";
+			cout << "Enter a number to convert: ";
 			cin >> VarToBeConverted;
 			CheckCinDouble(VarToBeConverted);
 			cout << VarToBeConverted / 100 << "m";
@@ -1022,7 +1022,7 @@ void Convertion()
 			Convertion();
 			break;
 		case 12:
-			cout << "Enter number to convert: ";
+			cout << "Enter a number to convert: ";
 			cin >> VarToBeConverted;
 			CheckCinDouble(VarToBeConverted);
 			cout << VarToBeConverted / 1000000 << "km";
@@ -1031,7 +1031,7 @@ void Convertion()
 			Convertion();
 			break;
 		case 13:
-			cout << "Enter number to convert: ";
+			cout << "Enter a number to convert: ";
 			cin >> VarToBeConverted;
 			CheckCinDouble(VarToBeConverted);
 			cout << VarToBeConverted * 100 << "cm";
@@ -1040,7 +1040,7 @@ void Convertion()
 			Convertion();
 			break;
 		case 14:
-			cout << "Enter number to convert: ";
+			cout << "Enter a number to convert: ";
 			cin >> VarToBeConverted;
 			CheckCinDouble(VarToBeConverted);
 			cout << VarToBeConverted / 1000 << "km";
@@ -1049,7 +1049,7 @@ void Convertion()
 			Convertion();
 			break;
 		case 15:
-			cout << "Enter number to convert: ";
+			cout << "Enter a number to convert: ";
 			cin >> VarToBeConverted;
 			CheckCinDouble(VarToBeConverted);
 			cout << VarToBeConverted * 1000000 << "cm";
@@ -1058,7 +1058,7 @@ void Convertion()
 			Convertion();
 			break;
 		case 16:
-			cout << "Enter number to convert: ";
+			cout << "Enter a number to convert: ";
 			cin >> VarToBeConverted;
 			CheckCinDouble(VarToBeConverted);
 			cout << VarToBeConverted * 1000 << "m";
@@ -1080,7 +1080,7 @@ void Convertion()
 void Formulas()
 {
 	system("CLS");
-	cout << "Choose a formaulas between:\n";
+	cout << "Choose a formula between:\n";
 	cout << "1. Calculate Speed\n";
 	cout << "2. Calculate Pressure\n";
 	cout << "3. Calculate Density\n";
@@ -1098,7 +1098,7 @@ void Formulas()
 	case 1:
 		system("CLS");
 
-		cout << "Enter the lengh of the road: ";
+		cout << "Enter the length of the road: ";
 		cin >> RoadLength;
 		CheckCinDouble(RoadLength);
 		'\n';
@@ -1200,7 +1200,7 @@ void EndOfTest()
 		cout << "Congratualation! You finished the test \n";
 		cout << "Correctly answered questions: " << points << "\n";
 		cout << "Grade: " << points/10 *100 << "%" << "\n";
-		cout << "When you are ready to go back press \"Entet\" \n";
+		cout << "When you are ready to go back press \"Enter\" \n";
 		system("pause");
 		points = 0;
 		QuestionsCounter = 0;
@@ -1353,7 +1353,7 @@ void ChooseNextQuestion()
 	}
 }
 
-void Reatempt(string retry, int quest)
+void Reattempt(string retry, int quest)
 {
 	string r = retry;
 	int q = quest;
@@ -1447,7 +1447,7 @@ void Reatempt(string retry, int quest)
 	{
 		cout << "Please enter YES or NO: ";
 		cin >> retry;
-		Reatempt(retry, q);
+		Reattempt(retry, q);
 	}
 }
 
@@ -1487,7 +1487,7 @@ void Question1()
 		string retry;
 		cin >> retry;
 
-		Reatempt(retry, Question);
+		Reattempt(retry, Question);
 	}
 }
 
@@ -1526,7 +1526,7 @@ void Question2()
 		string retry;
 		cin >> retry;
 
-		Reatempt(retry, Question);
+		Reattempt(retry, Question);
 	}
 }
 
@@ -1565,7 +1565,7 @@ void Question3()
 		string retry;
 		cin >> retry;
 
-		Reatempt(retry, Question);
+		Reattempt(retry, Question);
 	}
 }
 
@@ -1605,7 +1605,7 @@ void Question4()
 		string retry;
 		cin >> retry;
 
-		Reatempt(retry, Question);
+		Reattempt(retry, Question);
 	}
 }
 
@@ -1644,7 +1644,7 @@ void Question5()
 		string retry;
 		cin >> retry;
 
-		Reatempt(retry, Question);
+		Reattempt(retry, Question);
 	}
 }
 
@@ -1682,7 +1682,7 @@ void Question6()
 		string retry;
 		cin >> retry;
 
-		Reatempt(retry, Question);
+		Reattempt(retry, Question);
 	}
 }
 
@@ -1721,7 +1721,7 @@ void Question7()
 		string retry;
 		cin >> retry;
 
-		Reatempt(retry, Question);
+		Reattempt(retry, Question);
 	}
 }
 
@@ -1760,7 +1760,7 @@ void Question8()
 		string retry;
 		cin >> retry;
 
-		Reatempt(retry, Question);
+		Reattempt(retry, Question);
 	}
 }
 
@@ -1798,7 +1798,7 @@ void Question9()
 		string retry;
 		cin >> retry;
 
-		Reatempt(retry, Question);
+		Reattempt(retry, Question);
 	}
 }
 
@@ -1838,7 +1838,7 @@ void Question10()
 		string retry;
 		cin >> retry;
 
-		Reatempt(retry, Question);
+		Reattempt(retry, Question);
 	}
 }
 
@@ -1877,7 +1877,7 @@ void Question11()
 		string retry;
 		cin >> retry;
 
-		Reatempt(retry, Question);
+		Reattempt(retry, Question);
 	}
 }
 
@@ -1915,7 +1915,7 @@ void Question12()
 		string retry;
 		cin >> retry;
 
-		Reatempt(retry, Question);
+		Reattempt(retry, Question);
 	}
 }
 
@@ -1955,7 +1955,7 @@ void Question13()
 		string retry;
 		cin >> retry;
 
-		Reatempt(retry, Question);
+		Reattempt(retry, Question);
 	}
 }
 
@@ -1994,7 +1994,7 @@ void Question14()
 		string retry;
 		cin >> retry;
 
-		Reatempt(retry, Question);
+		Reattempt(retry, Question);
 	}
 }
 
@@ -2032,7 +2032,7 @@ void Question15()
 		string retry;
 		cin >> retry;
 
-		Reatempt(retry, Question);
+		Reattempt(retry, Question);
 	}
 }
 //Test code ↑
