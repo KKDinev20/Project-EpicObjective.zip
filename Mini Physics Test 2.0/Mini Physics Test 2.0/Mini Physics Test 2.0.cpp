@@ -23,7 +23,7 @@ void Question13();
 void Question14();
 void Question15();
 void ChooseNextQuestion();
-void Reatempt(string retry, int quest);
+void Reattempt(string retry, int quest);
 
 int points = 0;
 int QuestionsCounter = 0;
@@ -143,7 +143,7 @@ void ChooseNextQuestion()
 	}
 }
 
-void Reatempt(string retry, int quest)
+void Reattempt(string retry, int quest)
 {
 	string r = retry;
 	int q = quest;
@@ -236,7 +236,7 @@ void Reatempt(string retry, int quest)
 	else
 	{
 		cout << "Please enter YES or NO";
-		Reatempt(r, q);
+		Reattempt(r, q);
 	}
 }
 
@@ -275,7 +275,7 @@ void Question1()
 		string retry;
 		cin >> retry;
 
-		Reatempt(retry, Question);
+		Reattempt(retry, Question);
 	}
 }
 
@@ -314,7 +314,7 @@ void Question2()
 		string retry;
 		cin >> retry;
 
-		Reatempt(retry, Question);
+		Reattempt(retry, Question);
 	}
 }
 
@@ -353,7 +353,7 @@ void Question3()
 		string retry;
 		cin >> retry;
 
-		Reatempt(retry, Question);
+		Reattempt(retry, Question);
 	}
 }
 
@@ -392,7 +392,7 @@ void Question4()
 		string retry;
 		cin >> retry;
 
-		Reatempt(retry, Question);
+		Reattempt(retry, Question);
 	}
 }
 
@@ -431,7 +431,7 @@ void Question5()
 		string retry;
 		cin >> retry;
 
-		Reatempt(retry, Question);
+		Reattempt(retry, Question);
 	}
 }
 
@@ -469,7 +469,7 @@ void Question6()
 		string retry;
 		cin >> retry;
 
-		Reatempt(retry, Question);
+		Reattempt(retry, Question);
 	}
 }
 
@@ -507,7 +507,7 @@ void Question7()
 		string retry;
 		cin >> retry;
 
-		Reatempt(retry, Question);
+		Reattempt(retry, Question);
 	}
 }
 
@@ -546,7 +546,7 @@ void Question8()
 		string retry;
 		cin >> retry;
 
-		Reatempt(retry, Question);
+		Reattempt(retry, Question);
 	}
 }
 
@@ -584,7 +584,7 @@ void Question9()
 		string retry;
 		cin >> retry;
 
-		Reatempt(retry, Question);
+		Reattempt(retry, Question);
 	}
 }
 
@@ -623,7 +623,7 @@ void Question10()
 		string retry;
 		cin >> retry;
 
-		Reatempt(retry, Question);
+		Reattempt(retry, Question);
 	}
 }
 
@@ -662,7 +662,7 @@ void Question11()
 		string retry;
 		cin >> retry;
 
-		Reatempt(retry, Question);
+		Reattempt(retry, Question);
 	}
 }
 
@@ -700,7 +700,7 @@ void Question12()
 		string retry;
 		cin >> retry;
 
-		Reatempt(retry, Question);
+		Reattempt(retry, Question);
 	}
 }
 
@@ -740,7 +740,7 @@ void Question13()
 		string retry;
 		cin >> retry;
 
-		Reatempt(retry, Question);
+		Reattempt(retry, Question);
 	}
 }
 
@@ -779,7 +779,7 @@ void Question14()
 		string retry;
 		cin >> retry;
 
-		Reatempt(retry, Question);
+		Reattempt(retry, Question);
 	}
 }
 
@@ -817,7 +817,7 @@ void Question15()
 		string retry;
 		cin >> retry;
 
-		Reatempt(retry, Question);
+		Reattempt(retry, Question);
 	}
 }
 
