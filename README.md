@@ -11,3 +11,9 @@ Our idea is to create a program which can help your studies in a funnier and eas
 - A Physics adventure
 
 
+## Team
+- Scrum Trainer – <a href="https://github.com/KKDinev20"> Konstantin Dinev </a>
+- Backend Developer – <a href="https://github.com/ERKeserdzhieva20"> Elena Keserdzhieva </a>
+- Backend Developer – <a href="https://github.com/PRDaylyanov20"> Plamen Daylyanov </a>
+- Q&A Engineer – <a href="https://github.com/RIPetkov20"> Rumen Petkov </a>
+
