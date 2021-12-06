@@ -17,3 +17,6 @@ Our idea is to create a program which can help your studies in a funnier and eas
 - Backend Developer – <a href="https://github.com/PRDaylyanov20"> Plamen Daylyanov </a>
 - Q&A Engineer – <a href="https://github.com/RIPetkov20"> Rumen Petkov </a>
 
+## Final product
+
+<a href="https://github.com/KKDinev20/Project-EpicObjective.zip/tree/main/EpicObjective.zip"> EpicObjective.zip </a>
